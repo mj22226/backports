@@ -46,7 +46,7 @@ jobs:
           allowUpdates: true
           prerelease: false
           name: backports v6.12-rc20240809
-          tag: v6.11-rc1
+          tag: v6.12-rc20240809
           token: ${{ secrets.GITHUB_TOKEN }}
           artifacts: |
                     backports-6.12-rc20240809.tar.xz
