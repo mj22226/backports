@@ -38,7 +38,7 @@ jobs:
       - name: Pack backports-6.12-rc20240814.tar.xz
         run: |
              tar -c backports-6.12-rc20240814 | xz > backports-6.12-rc20240814.tar.xz
-             sha256sum backports-6.12-rc20240809.tar.xz > sha256sum
+             sha256sum backports-6.12-rc20240814.tar.xz > sha256sum
 
       - name: Release build artifacts
         uses: ncipollo/release-action@v1.14.0
