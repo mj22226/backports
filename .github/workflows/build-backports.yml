@@ -28,27 +28,27 @@ jobs:
 
       - name: Generate backports tar
         working-directory: backports
-        run: ./gentree.py --refresh  ${GITHUB_WORKSPACE}/linux ${GITHUB_WORKSPACE}/backports-6.12-rc20240906
+        run: ./gentree.py --refresh  ${GITHUB_WORKSPACE}/linux ${GITHUB_WORKSPACE}/backports-6.12-rc20240920
 
       - name: Check for git changes
         working-directory: backports
         run: git diff
 
-      - name: Pack backports-6.12-rc20240906.tar.xz
+      - name: Pack backports-6.12-rc20240920.tar.xz
         run: |
-             tar -c backports-6.12-rc20240906 | xz > backports-6.12-rc20240906.tar.xz
-             sha256sum backports-6.12-rc20240906.tar.xz > sha256sum
+             tar -c backports-6.12-rc20240920 | xz > backports-6.12-rc20240920.tar.xz
+             sha256sum backports-6.12-rc20240920.tar.xz > sha256sum
 
       - name: Release build artifacts
         uses: ncipollo/release-action@v1.14.0
         with:
           allowUpdates: true
           prerelease: false
-          name: backports v6.12-rc20240906
-          tag: v6.12-rc20240906
+          name: backports v6.12-rc20240920
+          tag: v6.12-rc20240920
           token: ${{ secrets.GITHUB_TOKEN }}
           artifacts: |
-                    backports-6.12-rc20240906.tar.xz
+                    backports-6.12-rc20240920.tar.xz
                     sha256sum
 
 
