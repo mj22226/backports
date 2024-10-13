@@ -2,6 +2,7 @@ name: Build backports
 
 on:
   workflow_dispatch:
+  push:
 jobs:
   create_tar:
     name: Create backports tar
