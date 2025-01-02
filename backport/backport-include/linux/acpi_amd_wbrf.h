@@ -5,7 +5,6 @@
  */
 
 #ifndef _ACPI_AMD_WBRF_H
-#define _ACPI_AMD_WBRF_H
 
 #if LINUX_VERSION_IS_GEQ(6,8,0)
 #include_next <linux/acpi_amd_wbrf.h>
