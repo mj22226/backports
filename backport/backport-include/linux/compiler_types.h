@@ -20,4 +20,21 @@
 #endif
 #endif
 
+#ifndef at_least
+/*
+ * This designates the minimum number of elements a passed array parameter must
+ * have. For example:
+ *
+ *     void some_function(u8 param[at_least 7]);
+ *
+ * If a caller passes an array with fewer than 7 elements, the compiler will
+ * emit a warning.
+ */
+#ifndef __CHECKER__
+#define at_least static
+#else
+#define at_least
+#endif
+#endif
+
 #endif /* _BACKPORTS_LINUX_COMPILER_TYPES_H */
