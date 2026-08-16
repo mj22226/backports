@@ -5,14 +5,6 @@
 #include <linux/static_key.h>
 #include <linux/socket.h>
 
-
-#ifndef SOCKWQ_ASYNC_NOSPACE
-#define SOCKWQ_ASYNC_NOSPACE   SOCK_ASYNC_NOSPACE
-#endif
-#ifndef SOCKWQ_ASYNC_WAITDATA
-#define SOCKWQ_ASYNC_WAITDATA   SOCK_ASYNC_WAITDATA
-#endif
-
 #if LINUX_VERSION_IS_LESS(6,19,0)
 /*
  * The in-kernel socket API takes struct sockaddr_unsized since 6.19.
