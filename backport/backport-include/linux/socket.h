@@ -11,7 +11,7 @@
 #define SOL_NFC		280
 #endif
 
-#if LINUX_VERSION_IS_LESS(6,19,0)
+#if LINUX_VERSION_IS_LESS(6,18,0)
 /**
  * struct sockaddr_unsized - Unspecified size sockaddr for callbacks
  * @sa_family: Address family (AF_UNIX, AF_INET, AF_INET6, etc.)
@@ -28,7 +28,7 @@ struct sockaddr_unsized {
 	__kernel_sa_family_t	sa_family;	/* address family, AF_xxx */
 	char			sa_data[];	/* flexible address data */
 };
-#endif /* < 6.19 */
+#endif /* < 6.18 */
 
 #ifndef __sockaddr_check_size
 #define __sockaddr_check_size(size)	\

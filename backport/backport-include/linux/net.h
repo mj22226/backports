@@ -5,9 +5,9 @@
 #include <linux/static_key.h>
 #include <linux/socket.h>
 
-#if LINUX_VERSION_IS_LESS(6,19,0)
+#if LINUX_VERSION_IS_LESS(6,18,0)
 /*
- * The in-kernel socket API takes struct sockaddr_unsized since 6.19.
+ * The in-kernel socket API takes struct sockaddr_unsized since 6.18.
  * Older kernels still expect struct sockaddr here.
  */
 static inline int backport_kernel_connect(struct socket *sock,
@@ -17,6 +17,6 @@ static inline int backport_kernel_connect(struct socket *sock,
 	return kernel_connect(sock, (struct sockaddr *)addr, addrlen, flags);
 }
 #define kernel_connect backport_kernel_connect
-#endif /* < 6.19 */
+#endif /* < 6.18 */
 
 #endif /* __BACKPORT_LINUX_NET_H */
